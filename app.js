@@ -54,8 +54,7 @@ class Counter extends React.Component{
       type="addition" 
       click={this.handleMathClick}
       />
-      <h1>Liczba kliknięć: {this.state.count}</h1>
-      <h1>Wynik: {this.state.result}</h1>
+      <ResultPanel count={this.state.count} result={this.state.result}/>
       </>
     )
   }
@@ -70,6 +69,15 @@ const MathButton = (props) =>{
   )
 }
 
+const ResultPanel = (props) =>{
+  return(
+    
+    <React.Fragment>
+    <h1>Liczba kliknięć: {props.count}</h1>
+    <h1>Wynik: {props.result}</h1>
+    </React.Fragment>
+  )
+}
 
 
 ReactDOM.render(<Counter/>, document.getElementById('root'));
